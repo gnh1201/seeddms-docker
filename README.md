@@ -33,12 +33,15 @@ services:
       - FORCE_SSL=1
     mem_limit: 2g
     volumes:
-      - ./data:/var/www/seeddms/data
-      - ./backup:/var/www/seeddms/backup
+      - dms-data:/var/www/seeddms/data
+      - dms-backup:/var/www/seeddms/backup
     logging:
       options:
         max-size: "10m"
         max-file: "1"
+volumes:
+  dms-data:
+  dms-backup:
 ```
 
 If you run for the first time make sure to call `/install` and follow the instructions there.
