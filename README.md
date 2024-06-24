@@ -5,9 +5,13 @@ Builds a docker image for seeddms (https://www.seeddms.org).
 This image supports OCR processing for images and PDFs out of the box. Other types can be configured and converted using web interface.
 Cron is also included to handle jobs internally (backup, index, ...).
 
+This repository forked from: https://github.com/nlippke/seeddms-docker
+
 ## How to run
 
-`docker run --name seeddms -d -v dms-data:/var/www/seeddms/data -p 8080:80 nlippke/seeddms:6.0.23`
+`docker build -t gnh1201/seeddms:6.0.28`
+
+`docker run --name seeddms -d -v dms-data:/var/www/seeddms/data -p 8080:80 gnh1201/seeddms:6.0.28`
 
 or as compose file
 
@@ -16,7 +20,7 @@ version: '3'
 
 services:
   dms:
-    image: nlippke/seeddms:6.0.23
+    image: gnh1201/seeddms:6.0.28
     ports:
       - "8080:80"
       - "8443:443"
