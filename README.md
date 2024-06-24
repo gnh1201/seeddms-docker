@@ -33,10 +33,8 @@ services:
       - FORCE_SSL=1
     mem_limit: 2g
     volumes:
-      - dms-data:/var/www/seeddms/data
-      - /share/Container/container-data/seeddms/extensions:/var/www/seeddms/seeddms/ext
-      - /share/Container/container-data/seeddms/backup:/var/www/seeddms/backup
-      - /share/Container/container-data/seeddms/import:/var/www/seeddms/import
+      - ./data:/var/www/seeddms/data
+      - ./backup:/var/www/seeddms/backup
     logging:
       options:
         max-size: "10m"
