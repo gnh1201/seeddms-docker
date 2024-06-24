@@ -39,8 +39,6 @@ services:
       options:
         max-size: "10m"
         max-file: "1"
-volumes:
-  dms-data:
 ```
 
 If you run for the first time make sure to call `/install` and follow the instructions there.
